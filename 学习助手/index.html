@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习助手</title>
+    <link rel="stylesheet" href="entrance.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>学习助手</h1>
+            <p class="subtitle">学习与娱乐的完美结合</p>
+        </header>
+
+        <main class="card-container">
+            <div class="card" onclick="navigate('课程表管理系统/index.html')">
+                <div class="card-icon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                <div class="card-content">
+                    <h2>课程表管理</h2>
+                    <p>管理你的课程安排，高效规划学习时间</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="navigate('番茄钟/index.html')">
+                <div class="card-icon">
+                    <i class="fa fa-clock-o"></i>
+                </div>
+                <div class="card-content">
+                    <h2>番茄时钟</h2>
+                    <p>科学管理学习与休息时间，提高学习效率</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="showGames()">
+                <div class="card-icon">
+                    <i class="fa fa-gamepad"></i>
+                </div>
+                <div class="card-content">
+                    <h2>益智小游戏</h2>
+                    <p>在学习之余放松大脑，提高思维能力</p>
+                </div>
+            </div>
+        </main>
+
+        <div id="gameOptions" class="game-options">
+            <div class="game-card" onclick="navigate('简单的华容道游戏/index.html')">
+                <div class="game-icon">
+                    <i class="fa fa-puzzle-piece"></i>
+                </div>
+                <h3>华容道</h3>
+                <p>经典的中国益智游戏</p>
+            </div>
+            <div class="game-card" onclick="navigate('钢琴块游戏/index.html')">
+                <div class="game-icon">
+                    <i class="fa fa-music"></i>
+                </div>
+                <h3>钢琴块</h3>
+                <p>节奏感音乐小游戏</p>
+            </div>
+            <!-- 添加美化的样式 -->
+            <style>
+                .game-card {
+                    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+                    border-radius: 15px;
+                    padding: 20px;
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                    text-align: center;
+                    position: relative;
+                    overflow: hidden;
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                }
+
+                .game-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+                    border-color: #4a6572;
+                }
+
+                .game-icon {
+                    font-size: 2.5rem;
+                    color: #4a6572;
+                    margin-bottom: 15px;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .game-card h3 {
+                    color: #344955;
+                    font-size: 1.5rem;
+                    margin-bottom: 8px;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .game-card p {
+                    color: #666;
+                    font-size: 0.9rem;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .game-card::before {
+                    content: '';
+                    position: absolute;
+                    top: -50%;
+                    left: -50%;
+                    width: 200%;
+                    height: 200%;
+                    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+                    opacity: 0;
+                    transform: scale(0.5);
+                    transition: all 0.5s ease;
+                }
+
+                .game-card:hover::before {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            </style>
+            <!-- 未来可以在这里添加更多游戏选项 -->
+        </div>
+
+        <footer>
+            <p>&copy; 2023 学习助手 | 关注学习与健康</p>
+        </footer>
+    </div>
+
+    <script>
+        function navigate(path) {
+            window.location.href = path;
+        }
+
+        function showGames() {
+            const gameOptions = document.getElementById('gameOptions');
+            if (gameOptions.style.display === 'flex') {
+                gameOptions.style.display = 'none';
+            } else {
+                gameOptions.style.display = 'flex';
+            }
+        }
+    </script>
+</body>
+
+</html>

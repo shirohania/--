@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钢琴块游戏</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1><i class="fa fa-music"></i> 钢琴块游戏</h1>
+        <div class="back-link">
+            <a href="../index.html"><i class="fa fa-home"></i> 返回主页</a>
+        </div>
+
+        <div class="game-info">
+            <p>点击落下的黑色方块，不要错过任何一个！使用键盘1-7、字母键ASDF(Do-Fa)、JKL(So-Si)或点击钢琴键演奏</p>
+            <div class="controls">
+                <button id="start-btn"><i class="fa fa-play"></i> 开始游戏</button>
+                <span id="score">得分: 0</span>
+                <div class="song-select">
+                    <label for="song-choice">选择曲目:</label>
+                    <select id="song-choice">
+                        <option value="twinkle">小星星</option>
+                        <option value="happy-birthday">生日快乐</option>
+                        <option value="jingle-bells">铃儿响叮当</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <div id="game-board">
+                <div class="lane" id="lane1"></div>
+                <div class="lane" id="lane2"></div>
+                <div class="lane" id="lane3"></div>
+                <div class="lane" id="lane4"></div>
+                <div class="lane" id="lane5"></div>
+                <div class="lane" id="lane6"></div>
+                <div class="lane" id="lane7"></div>
+            </div>
+
+            <div class="piano-keys">
+                <div class="key" data-key="1">Do</div>
+                <div class="key" data-key="2">Re</div>
+                <div class="key" data-key="3">Mi</div>
+                <div class="key" data-key="4">Fa</div>
+                <div class="key" data-key="5">Sol</div>
+                <div class="key" data-key="6">La</div>
+                <div class="key" data-key="7">Si</div>
+            </div>
+        </div>
+
+        <div id="game-over" class="game-over">
+            <h2>游戏结束!</h2>
+            <p id="final-score">你的得分: 0</p>
+            <button id="restart-btn"><i class="fa fa-refresh"></i> 再来一次</button>
+        </div>
+    </div>
+
+    <!-- 音频文件 -->
+    <audio id="note-1" src="sounds/note1.mp3" preload="auto"></audio>
+    <audio id="note-2" src="sounds/note2.mp3" preload="auto"></audio>
+    <audio id="note-3" src="sounds/note3.mp3" preload="auto"></audio>
+    <audio id="note-4" src="sounds/note4.mp3" preload="auto"></audio>
+    <audio id="note-5" src="sounds/note5.mp3" preload="auto"></audio>
+    <audio id="note-6" src="sounds/note6.mp3" preload="auto"></audio>
+    <audio id="note-7" src="sounds/note7.mp3" preload="auto"></audio>
+    <audio id="fail-sound" src="sounds/fail.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

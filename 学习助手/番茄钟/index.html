@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>番茄时钟</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1><i class="fa fa-clock-o"></i> 番茄时钟</h1>
+        <div class="back-link">
+            <a href="../index.html"><i class="fa fa-home"></i> 返回主页</a>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="pomodoro">
+                <i class="fa fa-hourglass-half"></i> 番茄钟
+            </button>
+            <button class="tab-btn" data-tab="alarm">
+                <i class="fa fa-bell"></i> 闹钟
+            </button>
+        </div>
+
+        <div class="tab-content active" id="pomodoro-tab">
+            <div class="info-card">
+                <p><i class="fa fa-info-circle"></i> 番茄工作法：25分钟专注工作，然后休息5分钟。每完成4个循环，休息一个较长时间（15-30分钟）。</p>
+            </div>
+
+            <div class="timer-container">
+                <div class="timer-display">
+                    <span id="minutes">25</span>:<span id="seconds">00</span>
+                </div>
+                <div class="timer-label" id="timer-status">工作时间</div>
+                <div class="progress-ring">
+                    <svg width="250" height="250">
+                        <circle class="progress-ring-circle-bg" cx="125" cy="125" r="110" />
+                        <circle class="progress-ring-circle" id="progress-ring" cx="125" cy="125" r="110" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="timer-controls">
+                <button id="pomodoro-btn" class="control-btn active"><i class="fa fa-briefcase"></i> 工作 (25分钟)</button>
+                <button id="short-break-btn" class="control-btn"><i class="fa fa-coffee"></i> 短休息 (5分钟)</button>
+                <button id="long-break-btn" class="control-btn"><i class="fa fa-bed"></i> 长休息 (15分钟)</button>
+            </div>
+
+            <div class="action-buttons">
+                <button id="start-btn" class="action-btn primary"><i class="fa fa-play"></i> 开始</button>
+                <button id="pause-btn" class="action-btn" disabled><i class="fa fa-pause"></i> 暂停</button>
+                <button id="reset-btn" class="action-btn"><i class="fa fa-refresh"></i> 重置</button>
+            </div>
+
+            <div class="session-count">
+                <span>已完成的番茄: <span id="completed-count">0</span></span>
+            </div>
+        </div>
+
+        <div class="tab-content" id="alarm-tab">
+            <div class="info-card">
+                <p><i class="fa fa-info-circle"></i> 设置闹钟提醒，帮助你安排学习和休息时间。</p>
+            </div>
+
+            <div class="alarm-container">
+                <div class="alarm-form">
+                    <div class="form-group">
+                        <label for="alarm-time"><i class="fa fa-clock-o"></i> 闹钟时间:</label>
+                        <input type="time" id="alarm-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="alarm-name"><i class="fa fa-tag"></i> 闹钟名称:</label>
+                        <input type="text" id="alarm-name" placeholder="例如：下午复习时间">
+                    </div>
+                    <button id="set-alarm-btn" class="action-btn primary"><i class="fa fa-plus"></i> 设置闹钟</button>
+                </div>
+
+                <div class="alarm-list">
+                    <h3><i class="fa fa-list"></i> 已设置的闹钟</h3>
+                    <div id="alarms-container">
+                        <!-- 闹钟会动态添加到这里 -->
+                        <div class="empty-alarm">
+                            <i class="fa fa-bell-slash"></i>
+                            <p>尚未设置任何闹钟</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 音频文件 -->
+    <audio id="timer-complete" src="sounds/timer-complete.mp3" preload="auto"></audio>
+    <audio id="alarm-sound" src="sounds/alarm.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

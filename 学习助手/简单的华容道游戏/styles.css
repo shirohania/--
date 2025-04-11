@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 添加返回链接样式 */
+.back-link {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.back-link a {
+    display: inline-block;
+    background: linear-gradient(145deg, #8b4513, #a0522d);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, #a0522d, #8b4513);
+}
+
+h1 {
+    color: #8b4513;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #deb887, #8b4513, #deb887);
+    border-radius: 3px;
+}
+
+.game-info {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #8b4513;
+}
+
+.game-info p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+button {
+    background: linear-gradient(145deg, #8b4513, #a0522d);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, #a0522d, #8b4513);
+}
+
+.game-board {
+    position: relative;
+    width: 300px;
+    height: 375px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #deb887, #d2b48c);
+    border: 8px solid #8b4513;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.block {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(93, 58, 26, 0.7);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    user-select: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.block:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cao {
+    background: linear-gradient(145deg, #d32f2f, #b71c1c);
+}
+
+.guan {
+    background: linear-gradient(145deg, #7b1fa2, #6a1b9a);
+}
+
+.zhang {
+    background: linear-gradient(145deg, #1976d2, #1565c0);
+}
+
+.zhao {
+    background: linear-gradient(145deg, #388e3c, #2e7d32);
+}
+
+.ma {
+    background: linear-gradient(145deg, #f57c00, #ef6c00);
+}
+
+.huang {
+    background: linear-gradient(145deg, #fbc02d, #f9a825);
+    color: #5d4037;
+}
+
+.soldier {
+    background: linear-gradient(145deg, #5d4037, #4e342e);
+}
+
+.exit {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75px;
+    height: 15px;
+    background: linear-gradient(to bottom, #8b4513, #654321);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.exit::before {
+    content: '出口';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.win-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    text-align: center;
+    animation: winAnimation 0.6s ease-out;
+    border: 3px solid gold;
+}
+
+@keyframes winAnimation {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.win-message h3 {
+    color: #d32f2f;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.win-message p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.win-message button {
+    background: linear-gradient(145deg, #d32f2f, #b71c1c);
+    margin-top: 10px;
+}
+
+#moves {
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(145deg, #f5f5f5, #e0e0e0);
+    border-radius: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #8b4513;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 添加响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    .game-board {
+        width: 280px;
+        height: 350px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+}

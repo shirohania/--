@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程表管理系统</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>课程表</h1>
+        <!-- 添加返回主页按钮 -->
+        <div class="back-link">
+            <a href="../index.html">返回主页</a>
+        </div>
+
+        <!-- 添加搜索区域 -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="输入课程名、教师名或上课时间搜索...">
+            <button id="searchBtn">查询</button>
+            <button id="clearSearchBtn">清除</button>
+        </div>
+
+        <div class="timetable-container">
+            <table id="timetable">
+                <thead>
+                    <tr>
+                        <th class="time-col">时间</th>
+                        <th>周一</th>
+                        <th>周二</th>
+                        <th>周三</th>
+                        <th>周四</th>
+                        <th>周五</th>
+                        <th>周六</th>
+                        <th>周日</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 时间段将通过JavaScript动态生成 -->
+                </tbody>
+            </table>
+        </div>
+        <button id="addCourseBtn" class="add-btn">+</button>
+    </div>
+
+    <!-- 添加课程的模态框 -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>添加新课程</h2>
+            <form id="courseForm">
+                <div class="form-group">
+                    <label for="courseName">课程名称:</label>
+                    <input type="text" id="courseName" required>
+                </div>
+                <div class="form-group">
+                    <label for="courseTeacher">教师:</label>
+                    <input type="text" id="courseTeacher">
+                </div>
+                <div class="form-group">
+                    <label for="courseLocation">地点:</label>
+                    <input type="text" id="courseLocation">
+                </div>
+                <div class="form-group">
+                    <label for="weekday">星期:</label>
+                    <select id="weekday" required>
+                        <option value="1">周一</option>
+                        <option value="2">周二</option>
+                        <option value="3">周三</option>
+                        <option value="4">周四</option>
+                        <option value="5">周五</option>
+                        <option value="6">周六</option>
+                        <option value="7">周日</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="startTime">开始时间:</label>
+                    <select id="startTime" required>
+                        <!-- 通过JavaScript动态生成时间选项 -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="duration">课程时长:</label>
+                    <select id="duration" required>
+                        <option value="1">45分钟 (1节)</option>
+                        <option value="2">100分钟 (2节)</option>
+                        <option value="3">155分钟 (3节)</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">保存</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华容道游戏</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1><i class="fa fa-puzzle-piece"></i> 华容道</h1>
+        <!-- 添加返回主页按钮 -->
+        <div class="back-link">
+            <a href="../index.html"><i class="fa fa-home"></i> 返回主页</a>
+        </div>
+        <div class="game-info">
+            <p><i class="fa fa-info-circle"></i> 移动方块，帮助曹操(红色方块)逃出华容道(到达底部出口)。点击并拖动方块进行移动。</p>
+            <button id="reset-btn"><i class="fa fa-refresh"></i> 重新开始</button>
+            <span id="moves"><i class="fa fa-step-forward"></i> 移动次数: 0</span>
+        </div>
+        <div class="game-board">
+            <!-- 游戏区域将由JavaScript填充 -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
